@@ -231,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const grid = document.querySelector('.testimonials-grid');
             const card = document.createElement('div');
             card.className = 'testimonial-card facebook-comment';
+            const stars = '★'.repeat(Math.max(1, Math.min(5, parseInt(rating, 10) || 5))) + '☆'.repeat(5 - Math.max(1, Math.min(5, parseInt(rating, 10) || 5)));
             card.innerHTML = `
                 <div class="comment-header">
                     <div class="user-avatar"><div class="avatar-placeholder">${(name[0] || 'C').toUpperCase()}</div></div>
@@ -240,18 +241,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <p class="testimonial-text">${text}</p>
-                <div class="comment-actions">
-                    <button class="like-btn">👍 Curtir</button>
-                    <button class="reply-btn">💬 Responder</button>
-                    <button class="hide-btn">👁️ Ocultar</button>
-                </div>
-                <div class="comment-stats">
-                    <span class="likes-count">⭐ ${rating}</span>
-                </div>
+                <div class="comment-stars" aria-label="Avaliação: ${rating} de 5">${stars}</div>
             `;
             grid.prepend(card);
             commentForm.reset();
         });
+    }
+
+    // FAQ toggle
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+        });
+    });
+    const floatingCta = document.getElementById('floating-cta');
+    let scrollDetected = false;
+    if (floatingCta) {
+        const onScroll = () => {
+            if (!scrollDetected) {
+                scrollDetected = true;
+                setTimeout(() => {
+                    floatingCta.style.display = 'flex';
+                }, 3000);
+                window.removeEventListener('scroll', onScroll);
+            }
+        };
+        window.addEventListener('scroll', onScroll);
     }
     
     console.log('Site Pendrive Virtual carregado com sucesso!');
