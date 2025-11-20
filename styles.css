@@ -1,0 +1,568 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px; /* Tamanho base maior para idosos */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: #20c997;
+    padding: 0.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.main-title {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 2rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-bottom: 3px solid #6d4c41;
+}
+
+.product-card {
+    background: linear-gradient(135deg, #6d4c41 0%, #4e342e 100%);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: 0 auto 1.5rem;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.product-hero-image {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 12px;
+    margin: 0.6rem 0 1rem;
+    display: block;
+    background: #4e342e;
+}
+
+.product-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #20c997;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.product-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+.product-subtitle {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.product-ribbon {
+    background: #28a745;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Price Section */
+.price-section {
+    margin: 3rem 0;
+}
+
+.price-text {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.old-price {
+    color: #dc3545;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+.current-price {
+    font-size: 4rem;
+    color: #6d4c41;
+    font-weight: 900;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.tagline {
+    font-size: 1.3rem;
+    color: #6d4c41;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* CTA Button */
+.cta-button {
+    background: linear-gradient(135deg, #20c997 0%, #20c997 100%);
+    color: white;
+    border: none;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(32, 201, 151, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 250px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(40, 167, 69, 0.5);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+.cta-button.large {
+    font-size: 1.8rem;
+    padding: 2rem 4rem;
+    min-width: 300px;
+}
+
+/* Sticky removido por solicitação do cliente */
+
+/* Features Section */
+.features {
+    padding: 4rem 0;
+    background: white;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #6d4c41;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 800;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2.5rem;
+    border-left: 5px solid #28a745;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-title {
+    color: #6d4c41;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.feature-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.feature-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Artists Section */
+.artists {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.artist-card {
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+}
+
+.artist-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid #6d4c41;
+    background: #6d4c41;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.artist-name {
+    font-size: 1.3rem;
+    color: #6d4c41;
+    font-weight: 700;
+}
+.artist-audio { width: 100%; margin-top: 0.6rem; }
+@media (min-width: 769px) {
+  .artist-audio { margin-top: auto; }
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 4rem 0;
+    background: #f0f2f5;
+}
+
+.testimonials-grid {
+    display: block;
+    max-height: 420px;
+    overflow-y: auto;
+    margin-top: 1rem;
+}
+
+/* Facebook Comment Style */
+.facebook-comment {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #dddfe2;
+    border-left: none;
+    margin-bottom: 1rem;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.user-avatar {
+    margin-right: 0.8rem;
+}
+
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6d4c41, #4e342e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.testimonial-name {
+    color: #6d4c41;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    display: block;
+}
+
+.comment-time {
+    color: #65676b;
+    font-size: 0.85rem;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #1c1e21;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    padding-left: 48px;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 1rem;
+    padding-left: 48px;
+    margin-bottom: 0.5rem;
+}
+
+.like-btn, .reply-btn, .hide-btn {
+    background: none;
+    border: none;
+    color: #65676b;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.like-btn:hover, .reply-btn:hover, .hide-btn:hover {
+    background-color: #f0f2f5;
+    color: #6d4c41;
+}
+
+.comment-stats {
+    display: flex;
+    gap: 1rem;
+    padding-left: 48px;
+    font-size: 0.85rem;
+    color: #65676b;
+}
+.comment-stats .likes-count { font-size: 1rem; font-family: inherit; font-weight: 600; color: #6d4c41; }
+
+/* Final CTA Section */
+.final-cta {
+    padding: 2rem 0;
+    background: #ffffff;
+    text-align: center;
+    color: #6d4c41;
+}
+
+.final-cta .section-title {
+    color: #6d4c41;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.final-cta .price-section { margin: 0.5rem 0; }
+.final-cta .current-price { font-size: 3rem; }
+.final-cta .cta-button.large { font-size: 1.6rem; padding: 1.2rem 2.4rem; }
+
+.promo-subtitle {
+    font-size: 1.3rem;
+    color: #20c997;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.discount-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #17a2b8;
+}
+
+.limited-time {
+    font-size: 1rem;
+    color: #20c997;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    background: #ffffff;
+    color: #6d4c41;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer-text {
+    font-size: 1.1rem;
+    color: #6d4c41;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    
+    .main-title { font-size: 0.9rem; }
+    .product-hero-image { height: 160px; }
+    .product-card { padding: 1.2rem; }
+    
+    .product-title {
+        font-size: 2.2rem;
+    }
+    
+    .current-price {
+        font-size: 3rem;
+    }
+    
+    .cta-button {
+        font-size: 1.3rem;
+        padding: 1.2rem 2.5rem;
+        min-width: 200px;
+    }
+    
+    .features-grid,
+    .artists-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card,
+    .testimonial-card {
+        padding: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Acessibilidade - Alto Contraste */
+@media (prefers-contrast: high) {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .cta-button {
+        background: #000;
+        color: #fff;
+        border: 3px solid #fff;
+    }
+    
+    .feature-card {
+        background: #fff;
+        border: 3px solid #000;
+    }
+}
+
+/* Acessibilidade - Redução de Movimento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Foco para navegação por teclado */
+button:focus,
+img:focus {
+    outline: 3px solid #2c5aa0;
+    outline-offset: 2px;
+}
+
+/* Melhorias de legibilidade */
+.feature-text,
+.testimonial-text {
+    max-width: 65ch;
+}
+
+/* Botões maiores para idosos */
+.cta-button {
+    min-height: 60px;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+/* Espaçamento generoso */
+.hero,
+.features,
+.artists,
+.testimonials,
+.final-cta {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+}
+.comment-form { margin-top: 1rem; background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.comment-form h3 { color: #2c5aa0; margin-bottom: 0.8rem; font-size: 1.2rem; }
+.comment-form form { display: grid; gap: 0.6rem; }
+.comment-form input, .comment-form select, .comment-form textarea { padding: 0.6rem; border: 1px solid #ced4da; border-radius: 6px; font-size: 1rem; }
+.comment-form button { background: #28a745; color: #fff; border: none; padding: 0.6rem 1rem; border-radius: 8px; font-weight: 600; cursor: pointer; }
+.comment-form button:hover { background: #218838; }
