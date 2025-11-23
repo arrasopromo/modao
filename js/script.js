@@ -29,18 +29,24 @@ document.addEventListener('DOMContentLoaded', function() {
         button.setAttribute('tabindex', '0');
     });
 
-    // Interceptar clique no link #preco para rolar sem mostrar hash na URL
-    const precoLink = document.querySelector('a[href="#preco"]');
-    if (precoLink) {
-        precoLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.getElementById('preco');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-                setTimeout(() => {
-                    history.replaceState(null, '', window.location.pathname + window.location.search);
-                }, 500);
-            }
+    // Interceptar cliques em qualquer link #preco e rolar suavemente (mobile e desktop)
+    const precoLinks = document.querySelectorAll('a[href="#preco"]');
+    if (precoLinks.length) {
+        precoLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.getElementById('preco');
+                if (target) {
+                    try {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } catch (_) {
+                        window.location.hash = '#preco';
+                    }
+                    setTimeout(() => {
+                        history.replaceState(null, '', window.location.pathname + window.location.search);
+                    }, 600);
+                }
+            });
         });
     }
     
