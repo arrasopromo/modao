@@ -6,18 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     ctaButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Adicionar efeito visual de clique
             this.style.transform = 'scale(0.95)';
-            
-            setTimeout(() => {
-                this.style.transform = '';
-                
-                // Simular download ou redirecionamento
-                showDownloadModal();
-            }, 150);
+            setTimeout(() => { this.style.transform = ''; }, 150);
         });
         
-        // Adicionar suporte para teclado (Enter e Space)
         button.addEventListener('keypress', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -25,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Tornar botões focáveis
         button.setAttribute('tabindex', '0');
     });
 
@@ -50,90 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Função para mostrar modal de download
-    function showDownloadModal() {
-        // Criar modal simples
-        const modal = document.createElement('div');
-        modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        `;
-        
-        const modalContent = document.createElement('div');
-        modalContent.style.cssText = `
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            max-width: 500px;
-            margin: 20px;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        `;
-        
-        modalContent.innerHTML = `
-            <h3 style="color: #2c5aa0; margin-bottom: 1.5rem; font-size: 1.8rem;">Preparando seu Download!</h3>
-            <p style="margin-bottom: 1rem; color: #555;">Seu pendrive virtual com + de 500 modões está sendo preparado.</p>
-            <p style="margin-bottom: 2rem; color: #555;">Por favor, aguarde alguns instantes...</p>
-            <div style="width: 60px; height: 60px; border: 5px solid #f3f3f3; border-top: 5px solid #28a745; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 2rem;"></div>
-            <button id="closeModal" style="background: #2c5aa0; color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; cursor: pointer;">Fechar</button>
-        `;
-        
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
-        
-        // Adicionar animação de spin
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Fechar modal
-        document.getElementById('closeModal').addEventListener('click', function() {
-            document.body.removeChild(modal);
-            document.head.removeChild(style);
-        });
-        
-        // Fechar ao clicar fora
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                document.body.removeChild(modal);
-                document.head.removeChild(style);
-            }
-        });
-        
-        // Simular processo de download
-        setTimeout(() => {
-            modalContent.innerHTML = `
-                <h3 style="color: #28a745; margin-bottom: 1.5rem; font-size: 1.8rem;">Download Concluído!</h3>
-                <p style="margin-bottom: 1rem; color: #555;">Seu pendrive virtual está pronto!</p>
-                <p style="margin-bottom: 2rem; color: #555;">As músicas foram organizadas nas pastas:</p>
-                <ul style="text-align: left; margin-bottom: 2rem; color: #555;">
-                    <li>VERSOS e NARRAÇÕES</li>
-                    <li>MODÃO RAIZ DE VERDADE</li>
-                    <li>GAÚCHAS, BAILÃO E FANDANGO</li>
-                </ul>
-                <button id="closeModal2" style="background: #28a745; color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; cursor: pointer;">OK</button>
-            `;
-            
-            document.getElementById('closeModal2').addEventListener('click', function() {
-                document.body.removeChild(modal);
-                document.head.removeChild(style);
-            });
-        }, 3000);
-    }
+    
     
     // Adicionar animação suave ao scroll
     const observerOptions = {
