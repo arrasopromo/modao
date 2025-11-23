@@ -52,19 +52,15 @@ body {
     border-radius: 20px;
     padding: 0;
     margin: 0 auto 1rem;
-    max-width: 900px;
+    max-width: 780px;
     width: 100%;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     overflow: hidden;
 }
 
-.product-hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 20px;
-}
+.product-hero-image { width: 100%; height: auto; display: block; border-radius: 20px; }
+@media (min-width: 769px) { .product-hero-image { max-height: 320px; } }
 
 .product-badge {
     position: relative;
@@ -335,6 +331,7 @@ body {
 @media (min-width: 769px) {
   .artist-audio { margin-top: auto; }
 }
+.track-title { font-size: 1rem; color: #6d4c41; font-weight: 700; margin-top: 0.6rem; }
 
 /* Testimonials Section */
 .testimonials {
@@ -507,7 +504,7 @@ body {
 }
 
 .footer-text {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #000;
     font-weight: 500;
 }
@@ -519,7 +516,7 @@ body {
     }
     
     .main-title { font-size: 0.9rem; }
-    .product-card { height: 280px; max-width: 100%; }
+    .product-card { max-width: 100%; }
     
     .product-title {
         font-size: 2.2rem;
@@ -620,8 +617,8 @@ img:focus {
 .faq-question { width: 100%; text-align: left; background: none; border: none; font-size: 1.1rem; font-weight: 700; color: #6d4c41; padding: 0.6rem 0; cursor: pointer; }
 .faq-answer { display: none; color: #333; font-size: 1rem; padding: 0.2rem 0 0.8rem; }
 .faq-question[aria-expanded="true"] + .faq-answer { display: block; }
-.floating-cta { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #111827 0%, #1f8c74 100%); color: #fff; padding: 0.8rem 1.2rem; border-radius: 14px; display: none; align-items: center; gap: 0.6rem; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px rgba(31,140,116,0.45); z-index: 999; border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(8px); transition: transform 0.2s ease, box-shadow 0.2s ease; font-size: 0.95rem; }
-.floating-cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 32px rgba(31,140,116,0.6), 0 0 18px rgba(32,201,151,0.5); }
+.floating-cta { position: fixed; bottom: 20px; right: 20px; background: #20c997; color: #fff; padding: 0.8rem 1.2rem; border-radius: 14px; display: none; align-items: center; gap: 0.6rem; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px rgba(32,201,151,0.45); z-index: 999; border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(8px); transition: transform 0.2s ease, box-shadow 0.2s ease; font-size: 0.95rem; }
+.floating-cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 32px rgba(32,201,151,0.6), 0 0 18px rgba(32,201,151,0.5); }
 .usb-icon { fill: #fff; }
 @media (max-width: 480px) { .floating-cta { bottom: 12px; right: 12px; padding: 0.8rem 1.2rem; border-radius: 14px; } }
 

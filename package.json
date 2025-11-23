@@ -1,0 +1,9 @@
+{
+  "name": "pendrive-virtual",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servidor simples Node para site estático Pendrive Virtual",
+  "scripts": {
+    "start": "node js/server.js"
+  }
+}
