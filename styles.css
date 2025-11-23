@@ -350,7 +350,7 @@ body {
   .testimonials-grid {
     max-height: 320px;
     padding-right: 4px;
-    overscroll-behavior-y: contain;
+    overscroll-behavior-y: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: #bdbdbd transparent;
