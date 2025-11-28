@@ -76,7 +76,7 @@ body {
     margin-bottom: 0.8rem;
 }
 .hero .container { text-align: center; }
-.hero-actions { text-align: center; }
+.hero-actions { text-align: center; display: flex; flex-direction: column; align-items: center; }
 .product-ribbon { margin-top: 1rem; display: inline-block; }
 
 .product-title {
@@ -106,6 +106,13 @@ body {
     display: inline-block;
     box-shadow: 0 4px 15px rgba(32, 201, 151, 0.4);
 }
+
+.hero-price { display: inline-block; margin: 0.2rem 0 0.3rem; text-align: center; line-height: 1.1; }
+.hero-price .old-price { display: block; margin-bottom: 0.08rem; }
+.hero-price .current-price { display: block; font-weight: 900; }
+.hero-actions .product-ribbon { margin-top: 0.3rem; }
+@media (max-width: 650px) { .hero .hero-price .old-price { font-size: 1.1rem; } .hero .hero-price .current-price { font-size: 1.6rem; } }
+@media (min-width: 651px) { .hero .hero-price .old-price { font-size: 1.2rem; } .hero .hero-price .current-price { font-size: 1.8rem; } }
 
 /* Price Section */
 .price-section {
