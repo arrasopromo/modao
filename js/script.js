@@ -171,18 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     const floatingCta = document.getElementById('floating-cta');
-    let scrollDetected = false;
     if (floatingCta) {
-        const onScroll = () => {
-            if (!scrollDetected) {
-                scrollDetected = true;
-                setTimeout(() => {
-                    floatingCta.style.display = 'flex';
-                }, 3000);
-                window.removeEventListener('scroll', onScroll);
-            }
-        };
-        window.addEventListener('scroll', onScroll);
+        setTimeout(() => { floatingCta.style.display = 'flex'; }, 3000);
     }
     
     console.log('Site Pendrive Virtual carregado com sucesso!');
