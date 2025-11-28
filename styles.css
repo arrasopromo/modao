@@ -60,7 +60,8 @@ body {
 }
 
 .product-hero-image { width: 100%; height: auto; display: block; border-radius: 20px; }
-@media (min-width: 769px) { .product-hero-image { max-height: 320px; } }
+@media (max-width: 650px) { .product-hero-image { max-height: 240px; } }
+@media (min-width: 651px) { .product-hero-image { max-height: 320px; } }
 
 .product-badge {
     position: relative;
